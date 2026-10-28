@@ -30,7 +30,6 @@ The desk also reads on its own: every pump.fun launch arrives on the tape the se
   card shows how many posts were fetched and what the call cost. When the daily budget is spent the
   card says so and shows chain facts only.
 - **Never an invented post.** Grok is told to never invent a post; every quote carries its URL.
-- **The token gates nothing.** Holding $LEVEL changes nothing on the site. It pays the Grok bill.
 
 ## Run it
 
@@ -84,5 +83,5 @@ with `{"mint": "..."}`, four a minute per IP, two at once.
     agent/      chain.py (rpc reads, the pump pda, the curve layout, dexscreener), grok.py (xai responses + x_search),
                 tape.py (pumpportal stream), desk.py (one read, the lines, the wall), main.py (the loop), server.py (http), __main__.py (cli)
     site/       static html + css + js, reads the desk's json; sample/ for local previews
-    deploy/     install.sh, push.sh, key.sh, mint.sh, the sandboxed systemd unit, the Caddy site
+    deploy/     install.sh, push.sh, key.sh, the sandboxed systemd unit, the Caddy site
     tests/      the pure parts
