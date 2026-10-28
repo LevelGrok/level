@@ -2,6 +2,8 @@
 
 A Grok teammate that **reads a pump.fun launch before you do.**
 
+**CA:** `3fK54p5SzHiPKB9JqPw893i1FNU5Xahf1QQbt4iPpump` · [pump.fun](https://pump.fun/coin/3fK54p5SzHiPKB9JqPw893i1FNU5Xahf1QQbt4iPpump) · [dexscreener](https://dexscreener.com/solana/3fK54p5SzHiPKB9JqPw893i1FNU5Xahf1QQbt4iPpump)
+
 **Live:** [level-bot.tech](https://level-bot.tech) · X: [@level_grok](https://x.com/level_grok) · desk json: [state](https://api.level-bot.tech/state.json) · [reads](https://api.level-bot.tech/reads.json) · [tape](https://api.level-bot.tech/tape.json)
 
 Paste a Solana mint. In about ten seconds the desk opens the pump.fun bonding curve (who created it,
