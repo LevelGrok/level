@@ -159,7 +159,7 @@ class Agent:
                      "posts_fetched": self.grok.posts_fetched, "spent_usd": round(self.grok.spent_usd, 3), "x_days": self.cfg.x_days},
             "rpc": {"url": self.cfg.rpc_url.split("?")[0].split("api-key")[0], "calls": self.rpc.calls, "errors": self.rpc.errors},
             "dex": {"ok": self.dex.ok, "calls": self.dex.calls, "error": self.dex.last_error},
-            "links": self.cfg.links,
+            "links": {k: v for k, v in self.cfg.links.items() if k in ("x", "github", "site")},
         }
 
     def write(self):
