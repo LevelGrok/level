@@ -1,0 +1,47 @@
+{
+"updated": 1793194739,
+"events": [
+{
+"ts": 1793190839,
+"kind": "boot",
+"text": "desk up \u00b7 grok ready \u00b7 auto reads on"
+},
+{
+"ts": 1793188919,
+"kind": "pick",
+"text": "LATTE crossed $57K at 41 min, reading"
+},
+{
+"ts": 1793188931,
+"kind": "read",
+"text": "LATTE read in 10.9s",
+"seconds": 10.9,
+"cost": 0.2
+},
+{
+"ts": 1793191619,
+"kind": "read",
+"text": "PIGEON read in 12.4s",
+"seconds": 12.4,
+"cost": 0.27,
+"source": "request"
+},
+{
+"ts": 1793193887,
+"kind": "pick",
+"text": "FOGMACHINE crossed $41K at 14 min, reading"
+},
+{
+"ts": 1793193899,
+"kind": "read",
+"text": "FOGMACHINE read in 11.2s",
+"seconds": 11.2,
+"cost": 0.16
+},
+{
+"ts": 1793194439,
+"kind": "skip",
+"text": "NAPKIN crossed $26K but the desk already read 20 this hour"
+}
+]
+}

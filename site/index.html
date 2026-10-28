@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>level — a Grok teammate that reads a pump.fun launch before you do</title>
+<meta name="description" content="Paste a Solana mint. In about ten seconds the desk reads the bonding curve, the creator wallet, the top holders, the market, and Grok reads X. Counts and quotes, never a price call. Read-only, open source.">
+<meta property="og:title" content="level — reads a pump.fun launch before you do">
+<meta property="og:description" content="Chain facts, the market, and Grok reading X: one card in about ten seconds. Read-only. No key, no buy button, no price call.">
+<meta property="og:image" content="https://levelbot.live/assets/brand/og.png">
+<meta property="og:url" content="https://levelbot.live/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/brand/avatar-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/level.css?v=2">
+</head>
+<body>
+<div class="bg" aria-hidden="true"><i class="p1"></i><i class="p2"></i><i class="g1"></i></div><div class="grid" aria-hidden="true"></div>
+<div class="rail"><div class="wrap">
+  <a class="brand" href="index.html"><span class="lg"></span>level</a>
+  <nav><a class="on" href="#desk">The desk</a><a href="#origin">Why Grok</a><a href="#reads">Reads</a><a href="#how">How it works</a><a href="#method">Method</a><a href="#token">$<span class="sym">LEVEL</span></a><a href="#never">Never</a></nav>
+  <div class="right"><span class="clock">--:--:-- UTC</span><span id="agent" class="chip off"><i></i>desk</span><a class="xlink" href="#" target="_blank" rel="noopener" title="on X">𝕏</a><a class="btn fill" href="#desk">Read a launch</a></div>
+</div></div>
+<div class="ticker" aria-hidden="true"><div class="track" id="ticker-track"></div></div>
+
+<header class="hero" id="desk"><div class="wrap">
+  <div>
+    <p class="eyebrow">a Grok Bot with one job · <b>pump.fun</b> · read-only · <span id="tape-rate">–</span> launches an hour</p>
+    <h1 class="disp"><span>Grok Bot leveled</span><span>a fund manager.</span><span>This one levels</span><span class="k">your next launch.</span></h1>
+    <p class="lead">Paste a pump.fun mint. A Grok teammate opens the bonding curve, the creator wallet, the top holders and the market, then <b>Grok reads X</b> for it: how many posts, how many accounts, how old they are, whether the project exists outside its own replies. One card of counts and quotes in about ten seconds. <b>Never a price call, never a buy button.</b></p>
+    <form class="readbox" id="readbox" autocomplete="off">
+      <input class="in" id="mint-in" placeholder="paste a pump.fun mint address, it ends with pump" spellcheck="false" maxlength="48">
+      <button type="submit" class="btn fill big" id="read-btn">Read it</button>
+    </form>
+    <p class="privacy" id="read-note">Four reads a minute per person. Nothing you paste is stored: no address, no IP, no time. The card goes on the wall, that is all.</p>
+  </div>
+  <div class="stage"><div class="orbit" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="term field"><div class="bar"><i></i><i></i><i></i><span id="field-cap">the tape, live · every dot is a launch · cyan is one the desk read</span></div>
+      <canvas id="field" width="640" height="330" aria-label="live launches as a 3d field"></canvas>
+      <div class="body journal" id="term-body"><div class="ln" style="opacity:1"><span class="d">connecting to the desk…</span></div></div></div></div>
+  <div id="read-out" class="readout"></div>
+  <div class="stats rv">
+    <div class="stat"><div class="l">launches, last hour</div><div class="v" id="st-tape">–</div></div>
+    <div class="stat"><div class="l">reads today</div><div class="v k" id="st-reads">–</div></div>
+    <div class="stat"><div class="l">seconds per read</div><div class="v" id="st-secs">–</div></div>
+    <div class="stat"><div class="l">grok today</div><div class="v" id="st-budget">–</div></div>
+    <div class="stat"><div class="l">reads in total</div><div class="v" id="st-total">–</div></div>
+  </div>
+</div></header>
+
+<div class="fast"><div class="wrap"><ol class="howfast rv" aria-label="how it works, short">
+  <li><span class="n">01</span><b>The tape never stops</b><span>Every pump.fun launch arrives on the desk the second it is created: mint, creator, first buy. Hundreds an hour. Most die in minutes.</span></li>
+  <li><span class="n">02</span><b>The desk reads what crosses the line</b><span>A launch that reaches <b id="line-mc">$25K</b> while it is still a launch gets read without anyone asking. Anyone can ask for any mint.</span></li>
+  <li><span class="n">03</span><b>Grok reads X, you read the card</b><span>Chain facts in two seconds, the market in one, Grok on X in six to ten. Counts, quotes, the time it took, what it cost.</span></li>
+</ol></div></div>
+
+
+<section id="origin" style="border-top:0"><div class="wrap">
+  <div class="sechead rv"><div><p class="eyebrow">where this comes from</p><h2 class="disp">A fund manager said Grok Bot leveled him. So we gave one a job.</h2>
+    <p>Baker of a16z said out loud that 23-year-olds are more fluent in AI than he will ever be, and that <b>Grok Bot</b> closed the gap: a podcast summarizer in ten seconds, an X sentiment tracker in twelve. The post went to twelve million people when Elon quoted it. LEVEL is that idea with one job: <b>read every pump.fun launch the way a 23-year-old with Grok would, before anyone installs their bags.</b></p></div></div>
+  <div class="origin rv">
+    <div class="panel embed"><blockquote class="twitter-tweet" data-theme="dark" data-dnt="true"><a href="https://x.com/stark0xbt/status/2114063460157809070">the post</a></blockquote></div>
+    <div class="panel embed"><blockquote class="twitter-tweet" data-theme="dark" data-dnt="true"><a href="https://x.com/elonmusk/status/2115353441954636214">Try Grok @Bot</a></blockquote></div>
+    <div class="panel teammate">
+      <p class="eyebrow">the teammate, as a job description</p>
+      <ul class="jobs">
+        <li><b>hired</b><span>a Grok model with the <code>x_search</code> tool, through xAI's API. real calls, real bill, shown on every card</span></li>
+        <li><b>job</b><span>read a pump.fun launch end to end and write one card of counts and quotes. no opinion</span></li>
+        <li><b>hours</b><span>24/7 on the tape. reads unasked when a launch crosses $25K, reads on request for anyone</span></li>
+        <li><b>never</b><span>trades, signs, predicts, invents a post, keeps your address</span></li>
+        <li><b>pay</b><span>about $0.10 a read, paid by the project token. a 23-year-old would charge more</span></li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section id="reads" style="padding-top:34px"><div class="wrap">
+  <div class="sechead rv">
+    <div><p class="eyebrow">the wall</p><h2 class="disp">Every read, newest first</h2>
+      <p>Each card is one launch the desk read: the lines are counts from the chain and from X, the quotes are real posts Grok found, the footer is the time and the cost. <b>A card never says buy, sell, safe or rug.</b> It says what is there.</p></div>
+    <a class="more" href="#desk">Read one yourself ↑</a>
+  </div>
+  <div class="filters"><button type="button" class="on" data-f="all">all</button><button type="button" data-f="desk">desk picked</button><button type="button" data-f="request">asked for</button><button type="button" data-f="alert">with alerts</button><span class="cnt" id="wall-count"></span></div>
+  <div class="catches rv d1" id="wall"><div class="empty">loading the wall…</div></div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <div class="sechead rv"><div><p class="eyebrow">how it works</p><h2 class="disp">One read, step by step</h2>
+    <p>No install, no wallet, no key on your side. The desk talks to public RPC, Dexscreener, PumpPortal and xAI. That is the whole list.</p></div></div>
+  <div class="how rv">
+    <div class="panel"><div class="n">01 · curve</div><h3 class="disp">The bonding curve</h3><p>The pump.fun curve account for the mint: <b>who created it</b>, how far along it is, whether it graduated to a pool. One RPC read.</p></div>
+    <div class="panel"><div class="n">02 · holders</div><h3 class="disp">Top holders, named</h3><p>The twenty largest token accounts, each resolved to its owner and its owning program, so <b>the curve and the pools are excluded</b> and the top-10 share is people, not plumbing.</p></div>
+    <div class="panel"><div class="n">03 · creator</div><h3 class="disp">The creator wallet</h3><p>Up to a thousand signatures: <b>first seen, last seen, how busy</b>. The SOL balance. How much of the supply it still holds. A wallet born this morning is a line on the card.</p></div>
+    <div class="panel"><div class="n">04 · market</div><h3 class="disp">Dexscreener</h3><p>Market cap, liquidity, 24h volume, buys and sells, the listing's website and social links, paid boosts. The X handle on the listing is handed to Grok.</p></div>
+    <div class="panel"><div class="n">05 · grok on x</div><h3 class="disp">Grok reads X</h3><p>xAI's Responses API with the <code>x_search</code> tool, last seven days, a few searches: ticker, name, mint, the handle. It answers in json: <b>posts, accounts, account ages, repeated text, the project's own account, big accounts, five quotes</b>.</p></div>
+    <div class="panel"><div class="n">06 · card</div><h3 class="disp">The card</h3><p>Lines in three colours: <span class="d">info</span>, <span class="a">note</span>, <span class="r">alert</span>. An alert is a count past a published threshold, nothing more. Time and cost at the bottom. Then it is on the wall.</p></div>
+  </div>
+  <div class="pipe"><span>tape</span><i>→</i><span>crossed $25K?</span><i>→</i><span>curve</span><i>→</i><span>holders</span><i>→</i><span>creator</span><i>→</i><span>market</span><i>→</i><span>grok · x_search</span><i>→</i><span>card</span><i>→</i><span>wall</span></div>
+</div></section>
+
+<section id="method"><div class="wrap">
+  <div class="sechead rv"><div><p class="eyebrow">the method, in public</p><h2 class="disp">Exactly what a line means</h2>
+    <p>Every threshold the desk uses, so a card can be checked by anyone. These are the numbers in <code>agent/desk.py</code>, nothing else decides a colour.</p></div>
+    <a class="more ghlink" href="#" target="_blank" rel="noopener">desk.py →</a></div>
+  <table class="rules-t">
+    <thead><tr><th>line</th><th>source</th><th>becomes an alert when</th></tr></thead>
+    <tbody>
+      <tr><td class="id">creator wallet age</td><td>oldest of up to 1,000 signatures on the creator wallet</td><td>under 1 day<span class="d"> · note under 7 days · older than 1,000 signatures is reported as a floor</span></td></tr>
+      <tr><td class="id">creator still holds</td><td>token accounts owned by the creator, share of supply</td><td>10% or more<span class="d"> · note at 3%</span></td></tr>
+      <tr><td class="id">top 10 wallets</td><td>largest token accounts, owners whose owning program is not pump.fun or a known dex</td><td>50% or more<span class="d"> · note at 30%</span></td></tr>
+      <tr><td class="id">authorities</td><td>mint account, parsed</td><td>mint or freeze authority still set</td></tr>
+      <tr><td class="id">x posts</td><td>Grok, x_search, last 7 days</td><td>zero posts found<span class="d"> · otherwise a count of posts and accounts</span></td></tr>
+      <tr><td class="id">new accounts</td><td>Grok, accounts created in the last 30 days among those posting</td><td>half or more of the posting accounts</td></tr>
+      <tr><td class="id">same text</td><td>Grok, posts repeating the same text</td><td>5 or more<span class="d"> · note below</span></td></tr>
+      <tr><td class="id">project account</td><td>Grok, the handle from the listing</td><td>never an alert; <span class="d">reported as found with followers and age, or not found, or none listed</span></td></tr>
+      <tr><td class="id">market</td><td>Dexscreener best pair</td><td>never an alert; <span class="d">note when the listing has no website and no socials, note on paid boosts</span></td></tr>
+    </tbody>
+  </table>
+  <div class="thresh">
+    <div class="stat"><div class="l">desk reads unasked at</div><div class="v" id="th-mc">$25K<small>market cap, 3 to 180 min old</small></div></div>
+    <div class="stat"><div class="l">unasked reads per hour</div><div class="v" id="th-hour">20<small>then it waits</small></div></div>
+    <div class="stat"><div class="l">grok budget per day</div><div class="v" id="th-budget">$5<small>when it is spent the card says so</small></div></div>
+    <div class="stat"><div class="l">one read costs about</div><div class="v">$0.10<small>posts fetched × $0.005, plus tokens</small></div></div>
+  </div>
+</div></section>
+
+<section id="token"><div class="wrap">
+  <div class="sechead rv"><div><p class="eyebrow">the token</p><h2 class="disp">$<span class="sym">LEVEL</span> pays the desk's bill</h2>
+    <p>The desk reads with a real Grok key and every read costs real money. The project token is how that bill gets paid and how the desk stays free for anyone who pastes a mint. <b>The token does nothing inside the desk: it never gates a read, never changes a line.</b></p></div></div>
+  <div class="token rv">
+    <div class="panel" id="mint"><div class="mintrow"><span class="eyebrow" style="margin:0">mint</span><code>posted on the project account on launch day</code></div></div>
+    <div class="panel">
+      <p class="eyebrow">what the site will never do</p>
+      <p style="margin:0;color:var(--dim);font-size:14.5px;line-height:1.65">The buy button opens Jupiter's swap in your own wallet; the site holds nothing and signs nothing. The desk has no wallet and no key to one. No part of the code can send a transaction: the RPC client refuses any method that is not a read before the request is built.</p>
+      <p class="api-note" style="margin-top:14px">agent: –</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="never"><div class="wrap">
+  <div class="sechead rv"><div><p class="eyebrow">hard limits</p><h2 class="disp">Never</h2></div></div>
+  <div class="never rv">
+    <div class="panel"><span class="x">×</span><div><b>Never a price call</b><p>No score, no rating, no target, no "safe", no "rug". Counts past a published threshold, and quotes from real posts. The person decides.</p></div></div>
+    <div class="panel"><span class="x">×</span><div><b>Never a signer</b><p>No private key anywhere. The RPC client has an allow-list of read methods and refuses everything else before a request exists.</p></div></div>
+    <div class="panel"><span class="x">×</span><div><b>Never your data</b><p>A read is not logged with who asked. No IP, no address, no timestamp of the request. The card goes on the wall without you.</p></div></div>
+    <div class="panel"><span class="x">×</span><div><b>Never an invented post</b><p>Grok is told to never invent a post. Every quote carries its URL. If it found nothing, the card says it found nothing.</p></div></div>
+    <div class="panel"><span class="x">×</span><div><b>Never pretends the budget is there</b><p>When the day's Grok budget is spent, the card says so and shows chain facts only. No silent degrade.</p></div></div>
+    <div class="panel"><span class="x">×</span><div><b>Never gated by the token</b><p>Holding $<span class="sym">LEVEL</span> changes nothing on this site. The token pays the bill, it does not buy a better card.</p></div></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div>level · a Grok teammate for pump.fun · open source, read-only</div>
+  <div class="links"><a class="ghlink" href="#" target="_blank" rel="noopener">GitHub</a><a class="xlink2" href="#" target="_blank" rel="noopener">X</a><a href="#method">Method</a><a href="#desk">Read a launch</a></div>
+</div></footer>
+<script src="assets/level.js?v=2"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script>LEVEL.init();</script>
+</body>
+</html>

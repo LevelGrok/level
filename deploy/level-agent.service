@@ -1,0 +1,35 @@
+[Unit]
+Description=level desk: reads pump.fun launches with Grok, serves the cards
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=level
+Group=level
+WorkingDirectory=/opt/level/app
+EnvironmentFile=-/etc/level.env
+Environment=PATH=/opt/level/venv/bin:/usr/local/bin:/usr/bin:/bin
+ExecStart=/opt/level/venv/bin/python -m agent -c /opt/level/config.toml run
+Restart=always
+RestartSec=5
+# the desk only ever reads: public rpc, dexscreener, pumpportal, xai. the box makes sure that is all it can do
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+RestrictNamespaces=true
+LockPersonality=true
+SystemCallArchitectures=native
+CapabilityBoundingSet=
+ReadWritePaths=/opt/level/data
+MemoryMax=1500M
+TasksMax=64
+
+[Install]
+WantedBy=multi-user.target

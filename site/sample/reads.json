@@ -1,0 +1,628 @@
+[
+{
+"mint": "4vCD7bAeUT9sodxvxhJpLmRCKYPEDfqKqbkMLjMQUQPR",
+"ts": 1793193899,
+"source": "desk",
+"name": "Fog Machine",
+"symbol": "FOGMACHINE",
+"chain": {
+"creator": "6anbDQNCcVh2f6okexjaX1VGj6tEnizJ1kV5UTBS8Zhi",
+"creator_age_days": 0.4,
+"creator_tx_sampled": 31,
+"creator_sol": 1.2,
+"creator_holds_pct": 12.5,
+"top10_pct": 58.3,
+"top1_pct": 14.1,
+"bonding": {
+"complete": false,
+"progress_pct": 62.0
+},
+"mint_authority": false,
+"freeze_authority": false,
+"holders": [
+{
+"owner": "curve",
+"pct": 38.0,
+"kind": "curve"
+},
+{
+"owner": "Borqy3dEjw9az7Uj9nW69A9ZDansFGHWEggUx7tkv44f",
+"pct": 12.5,
+"kind": "wallet"
+},
+{
+"owner": "AUH6c4QLMr2qQr9N5Kkpz5astDM9gBNroXCSxQiFTGQv",
+"pct": 9.1,
+"kind": "wallet"
+},
+{
+"owner": "DYougPS3ao5Ticdy5bFcKKcXgSjHVJ2yuwaMgxHpPoQr",
+"pct": 8.0,
+"kind": "wallet"
+},
+{
+"owner": "B1rADWGjAKbZYVHMYhS5ZKyMbqFB65vmNNxUXdgFBoh3",
+"pct": 7.2,
+"kind": "wallet"
+},
+{
+"owner": "3wEbogFD59ihp6BMG3fSWN3pmJZz7aHZWo1TQrbsLuMD",
+"pct": 6.4,
+"kind": "wallet"
+},
+{
+"owner": "7Atmc8eC2CovjDTvsNYoAinXNfSHQjzVp3bJs9PksFtN",
+"pct": 5.1,
+"kind": "wallet"
+},
+{
+"owner": "9t5sHQQLuvLEzYsEeuWNi4DyXkFnsgTerRpy3Db94CwV",
+"pct": 4.0,
+"kind": "wallet"
+},
+{
+"owner": "6twq5ZiS9YP4SbDUUtd1oNTHRsqkBtk5ktJp9UrQrLkR",
+"pct": 3.1,
+"kind": "wallet"
+},
+{
+"owner": "93PqguRxAJ3d5YQ8U6LTaVpF7BDTN9nEq55hibqZgkVh",
+"pct": 2.2,
+"kind": "wallet"
+},
+{
+"owner": "Ft44W7W4VhHhQsAg8gfCRAvKHEtfSAb5XghaEUjpWonk",
+"pct": 1.9,
+"kind": "wallet"
+}
+]
+},
+"market": {
+"indexed": true,
+"dex": "pumpfun",
+"mc": 41200,
+"liq": 11800,
+"vol24": 212000,
+"buys24": 812,
+"sells24": 640,
+"socials": [],
+"websites": [],
+"boosts": null
+},
+"x": {
+"posts_seen": 14,
+"accounts": 4,
+"accounts_under_30d": 3,
+"oldest_account_days": 9,
+"official": {
+"handle": null,
+"exists": false
+},
+"same_text_posts": 9,
+"big_accounts": [],
+"notable": [
+{
+"handle": "a1rdrop_hunter",
+"text": "FOGMACHINE sending, dev based, 100x soon",
+"url": "https://x.com/"
+},
+{
+"handle": "solquietly",
+"text": "four accounts posting the same line about $FOGMACHINE within two minutes. pass.",
+"url": "https://x.com/"
+}
+],
+"summary": "Fourteen posts from four accounts, three of them created this month, nine repeating the same text. No project account, no site, no one with an audience has mentioned it.",
+"usage": {
+"posts": 22,
+"users": 4,
+"cost_usd": 0.16,
+"model": "grok-4-fast",
+"seconds": 7.8,
+"searches": 3
+}
+},
+"handle": null,
+"seconds": 11.2,
+"cost_usd": 0.16,
+"reads": 1,
+"lines": [
+{
+"kind": "info",
+"text": "62.0% of the way to graduation on the bonding curve"
+},
+{
+"kind": "alert",
+"text": "creator wallet is less than a day old (31 transactions)"
+},
+{
+"kind": "info",
+"text": "creator holds 1.2 SOL"
+},
+{
+"kind": "alert",
+"text": "creator still holds 12.5% of supply"
+},
+{
+"kind": "alert",
+"text": "top 10 wallets hold 58.3% (curve and pools excluded)"
+},
+{
+"kind": "info",
+"text": "market cap $41.2K \u00b7 liquidity $11.8K \u00b7 24h volume $212.0K"
+},
+{
+"kind": "info",
+"text": "24h: 812 buys, 640 sells"
+},
+{
+"kind": "note",
+"text": "no website and no social links on the listing"
+},
+{
+"kind": "info",
+"text": "X: 14 posts from 4 accounts in 7 days"
+},
+{
+"kind": "alert",
+"text": "3 of 4 posting accounts were created in the last 30 days"
+},
+{
+"kind": "alert",
+"text": "9 posts repeat the same text"
+},
+{
+"kind": "note",
+"text": "no project account on X"
+}
+],
+"steps": [
+{
+"step": "curve",
+"s": 0.6,
+"note": "ok"
+},
+{
+"step": "market",
+"s": 0.4,
+"note": "indexed"
+},
+{
+"step": "chain",
+"s": 1.9,
+"note": "ok"
+},
+{
+"step": "x",
+"s": 8.299999999999999,
+"note": "22 posts fetched"
+}
+]
+},
+{
+"mint": "6Mpz5xm4qTBEoYyKNyQScWmcqTuNeimHewvQRjqBfBmy",
+"ts": 1793191619,
+"source": "request",
+"name": "Pigeon Post",
+"symbol": "PIGEON",
+"chain": {
+"creator": "4PVdFdF5tJn7VhcsCCv5sDkCHV9mHph78Rd3EHEtV4PB",
+"creator_age_days": 212.0,
+"creator_tx_sampled": 1000,
+"creator_age_floor": true,
+"creator_sol": 4.8,
+"creator_holds_pct": 0.0,
+"top10_pct": 21.4,
+"top1_pct": 4.2,
+"bonding": {
+"complete": true,
+"progress_pct": 100.0
+},
+"mint_authority": false,
+"freeze_authority": false,
+"holders": [
+{
+"owner": "pool",
+"pct": 61.0,
+"kind": "pool"
+},
+{
+"owner": "6j9picbMF7CReFV2QxVWMNB5jzwenNJtDMHFkjzSyApN",
+"pct": 4.2,
+"kind": "wallet"
+},
+{
+"owner": "712GDsrYh7LCo2fbCcpc2WqUx71Us5vBdVFWpxDnAiCS",
+"pct": 3.9,
+"kind": "wallet"
+},
+{
+"owner": "5UmDM9ktDg6XWSfXsfP6VRdCczQ3oAtqCGC6peBfDLWW",
+"pct": 3.1,
+"kind": "wallet"
+},
+{
+"owner": "7wE4VikYAdTxrVDHj1xsZTb8UVXhkaf8vZvb4Uvh9zz",
+"pct": 2.4,
+"kind": "wallet"
+},
+{
+"owner": "AdLAZnRSXjALabts1TxJ7zKkV15xWUhMVVQqcoomveuh",
+"pct": 2.0,
+"kind": "wallet"
+},
+{
+"owner": "Aghn9c2qSyU2dtLbc9zk8nf4W8QsEXVTiAsX36jRznmD",
+"pct": 1.8,
+"kind": "wallet"
+},
+{
+"owner": "GDkx2juvSvbRP96E1Vj7UTPJwHgjZzPvNjcPfTq5Utvq",
+"pct": 1.5,
+"kind": "wallet"
+},
+{
+"owner": "AXCMJrLwKw8A2gDZQPeHH6eTLmvf5vJmXavphdfKCzn4",
+"pct": 1.0,
+"kind": "wallet"
+},
+{
+"owner": "8KukmJuidRig56Y5Xd2EzwbyUyvicXmGsodZgRWPAAjK",
+"pct": 0.9,
+"kind": "wallet"
+},
+{
+"owner": "2TMQJaNWpzQpTAmDnJDnMfcq1Utvia5s673TmFJpMt7w",
+"pct": 0.6,
+"kind": "wallet"
+}
+]
+},
+"market": {
+"indexed": true,
+"dex": "pumpswap",
+"mc": 188000,
+"liq": 42000,
+"vol24": 940000,
+"buys24": 3100,
+"sells24": 2700,
+"socials": [
+{
+"type": "twitter",
+"url": "https://x.com/pigeonpostsol"
+}
+],
+"websites": [
+"https://pigeonpost.example"
+],
+"boosts": null
+},
+"x": {
+"posts_seen": 61,
+"accounts": 38,
+"accounts_under_30d": 6,
+"oldest_account_days": 2900,
+"official": {
+"handle": "pigeonpostsol",
+"exists": true,
+"followers": 2100,
+"created": "2026-09",
+"posts_about_launch": 17
+},
+"same_text_posts": 2,
+"big_accounts": [
+"somebigacct"
+],
+"notable": [
+{
+"handle": "pigeonpostsol",
+"text": "the pigeon delivers your tx receipts to telegram. open source, link in bio",
+"url": "https://x.com/"
+},
+{
+"handle": "skeptic_sol",
+"text": "cute, but the site is a landing page and the repo is a readme",
+"url": "https://x.com/"
+},
+{
+"handle": "somebigacct",
+"text": "pigeon post is the only launch today with a working demo",
+"url": "https://x.com/"
+}
+],
+"summary": "Sixty-one posts from thirty-eight accounts, most of them older. The project account exists since September with two thousand followers and posts about the product. One large account mentioned it; one critic says the repo is thin.",
+"usage": {
+"posts": 41,
+"users": 6,
+"cost_usd": 0.27,
+"model": "grok-4-fast",
+"seconds": 9.1,
+"searches": 4
+}
+},
+"handle": "pigeonpostsol",
+"seconds": 12.4,
+"cost_usd": 0.27,
+"reads": 1,
+"lines": [
+{
+"kind": "info",
+"text": "graduated to a pool"
+},
+{
+"kind": "info",
+"text": "creator wallet: older than 212 days, more than 1,000 transactions"
+},
+{
+"kind": "info",
+"text": "creator holds 4.8 SOL"
+},
+{
+"kind": "info",
+"text": "creator still holds 0% of supply"
+},
+{
+"kind": "info",
+"text": "top 10 wallets hold 21.4% (curve and pools excluded)"
+},
+{
+"kind": "info",
+"text": "market cap $188.0K \u00b7 liquidity $42.0K \u00b7 24h volume $940.0K"
+},
+{
+"kind": "info",
+"text": "24h: 3100 buys, 2700 sells"
+},
+{
+"kind": "info",
+"text": "X: 61 posts from 38 accounts in 7 days"
+},
+{
+"kind": "note",
+"text": "6 of 38 posting accounts were created in the last 30 days"
+},
+{
+"kind": "note",
+"text": "2 posts repeat the same text"
+},
+{
+"kind": "info",
+"text": "project account @pigeonpostsol: 2.1K followers, since 2026-09"
+},
+{
+"kind": "info",
+"text": "mentioned by @somebigacct"
+}
+],
+"steps": [
+{
+"step": "curve",
+"s": 0.6,
+"note": "ok"
+},
+{
+"step": "market",
+"s": 0.4,
+"note": "indexed"
+},
+{
+"step": "chain",
+"s": 1.9,
+"note": "ok"
+},
+{
+"step": "x",
+"s": 9.5,
+"note": "41 posts fetched"
+}
+]
+},
+{
+"mint": "7FjcCpXPEezmyvSEdFdxxsRPYBUqmCCnepj5TE23CoRb",
+"ts": 1793188919,
+"source": "desk",
+"name": "Oat Latte",
+"symbol": "LATTE",
+"chain": {
+"creator": "F7PQLZHfugqqFdqX3NSrbpJ9kgHhFwQ4fe7BDofUVHLe",
+"creator_age_days": 3.0,
+"creator_tx_sampled": 88,
+"creator_sol": 0.3,
+"creator_holds_pct": 2.1,
+"top10_pct": 33.0,
+"top1_pct": 6.0,
+"bonding": {
+"complete": false,
+"progress_pct": 88.0
+},
+"mint_authority": false,
+"freeze_authority": false,
+"holders": [
+{
+"owner": "curve",
+"pct": 12.0,
+"kind": "curve"
+},
+{
+"owner": "2FiVxpEdcbbMkUFc1vycYQrFHdix2ddcSTuAnWuyqcKM",
+"pct": 6.0,
+"kind": "wallet"
+},
+{
+"owner": "HkwTuXjN2nF68zpzvwV4d4qF8is7qqyGD2cjsG8oP5t9",
+"pct": 5.1,
+"kind": "wallet"
+},
+{
+"owner": "hZY5PdSkRahY35ayib26gX4G6noftrYk3ukzzXL3eqJ",
+"pct": 4.4,
+"kind": "wallet"
+},
+{
+"owner": "oAqHThZNBDs8XvXP8jHCbnGqUCgfJyUvB8XDtxMXdxF",
+"pct": 3.9,
+"kind": "wallet"
+},
+{
+"owner": "4ujF7T31igRYnNVxZiQC9BCE6x7QRWaxsmp2QAcEZPGi",
+"pct": 3.0,
+"kind": "wallet"
+},
+{
+"owner": "CLr4ZPc63qydie7vLYAWRBDkQNpXVdouYALw5U8eas12",
+"pct": 2.8,
+"kind": "wallet"
+},
+{
+"owner": "C3x9ivNXsXqiixFyyCmyhHEAo1WfZSEfZCcUyZnKRJAA",
+"pct": 2.5,
+"kind": "wallet"
+},
+{
+"owner": "94Wy4LLrYXACTacPG7WkFwoHKgqdRyQySPbjTwqeN3Cz",
+"pct": 2.1,
+"kind": "wallet"
+},
+{
+"owner": "3UT4chPbHWXzkdyBVW7YpSupZYUA2fFE4yYUiayBXChF",
+"pct": 1.7,
+"kind": "wallet"
+},
+{
+"owner": "3T9jJbz4x7BtjUjxsLX82oWjVfVhQe3vyU1KtCnA5dZt",
+"pct": 1.5,
+"kind": "wallet"
+}
+]
+},
+"market": {
+"indexed": true,
+"dex": "pumpfun",
+"mc": 57000,
+"liq": 15000,
+"vol24": 330000,
+"buys24": 1400,
+"sells24": 1100,
+"socials": [
+{
+"type": "twitter",
+"url": "https://x.com/oatlattecoin"
+}
+],
+"websites": [],
+"boosts": 3
+},
+"x": {
+"posts_seen": 27,
+"accounts": 19,
+"accounts_under_30d": 5,
+"oldest_account_days": 1400,
+"official": {
+"handle": "oatlattecoin",
+"exists": true,
+"followers": 140,
+"created": "2026-10",
+"posts_about_launch": 9
+},
+"same_text_posts": 3,
+"big_accounts": [],
+"notable": [
+{
+"handle": "oatlattecoin",
+"text": "latte szn. community takeover, dev gone, we stay",
+"url": "https://x.com/"
+},
+{
+"handle": "nightshift_sol",
+"text": "$LATTE 3 boosts on dex, 140 followers, make it make sense",
+"url": "https://x.com/"
+}
+],
+"summary": "Twenty-seven posts from nineteen accounts, five created this month. The project account is three weeks old with 140 followers and calls itself a community takeover. Three paid Dexscreener boosts are active.",
+"usage": {
+"posts": 30,
+"users": 5,
+"cost_usd": 0.2,
+"model": "grok-4-fast",
+"seconds": 8.2,
+"searches": 3
+}
+},
+"handle": "oatlattecoin",
+"seconds": 10.9,
+"cost_usd": 0.2,
+"reads": 1,
+"lines": [
+{
+"kind": "info",
+"text": "88.0% of the way to graduation on the bonding curve"
+},
+{
+"kind": "note",
+"text": "creator wallet is 3 days old, 88 transactions"
+},
+{
+"kind": "info",
+"text": "creator holds 0.3 SOL"
+},
+{
+"kind": "info",
+"text": "creator still holds 2.1% of supply"
+},
+{
+"kind": "note",
+"text": "top 10 wallets hold 33% (curve and pools excluded)"
+},
+{
+"kind": "info",
+"text": "market cap $57.0K \u00b7 liquidity $15.0K \u00b7 24h volume $330.0K"
+},
+{
+"kind": "info",
+"text": "24h: 1400 buys, 1100 sells"
+},
+{
+"kind": "note",
+"text": "3 paid Dexscreener boosts active"
+},
+{
+"kind": "info",
+"text": "X: 27 posts from 19 accounts in 7 days"
+},
+{
+"kind": "note",
+"text": "5 of 19 posting accounts were created in the last 30 days"
+},
+{
+"kind": "note",
+"text": "3 posts repeat the same text"
+},
+{
+"kind": "info",
+"text": "project account @oatlattecoin: 140 followers, since 2026-10"
+}
+],
+"steps": [
+{
+"step": "curve",
+"s": 0.6,
+"note": "ok"
+},
+{
+"step": "market",
+"s": 0.4,
+"note": "indexed"
+},
+{
+"step": "chain",
+"s": 1.9,
+"note": "ok"
+},
+{
+"step": "x",
+"s": 8.0,
+"note": "30 posts fetched"
+}
+]
+}
+]

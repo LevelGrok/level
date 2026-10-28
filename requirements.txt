@@ -1,0 +1,4 @@
+requests>=2.31
+websocket-client>=1.7
+tomli>=2.0; python_version < "3.11"
+pytest>=8

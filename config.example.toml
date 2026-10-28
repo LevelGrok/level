@@ -1,0 +1,28 @@
+# level: copy to config.toml and edit. everything has a default.
+
+[agent]
+data_dir = "./data"            # state.json, reads.json, tape.json, events.json live here
+rpc_url = "https://api.mainnet-beta.solana.com"   # a free Helius key works better: https://mainnet.helius-rpc.com/?api-key=...
+auto_reads = true              # the desk reads launches on its own when they cross the line below
+auto_mc_usd = 25000            # market cap a launch has to reach before the desk reads it unasked
+auto_min_age_min = 3           # ...and how old it has to be (so the pair exists)
+auto_max_age_min = 180         # ...and how young (the desk reads launches, not history)
+auto_per_hour = 20             # cap on unasked reads, to keep the Grok bill flat
+daily_budget_usd = 5.0         # Grok spend per UTC day; when it is gone the desk says so
+x_days = 7                     # how far back Grok searches X
+max_turns = 4                  # search rounds per read; each round fetches posts, posts cost money
+poll_s = 15
+
+[server]
+host = "127.0.0.1"             # put caddy or nginx in front; the agent speaks plain http
+port = 8793
+cors = "*"
+read_per_min = 4               # POST /read per IP per minute
+
+[links]
+# everything the site shows about the project comes from here: one edit + restart changes it everywhere
+token_mint = ""                # the token's contract address, once it exists; empty hides the buy button
+token_symbol = "LEVEL"
+x = ""                         # the project account on X
+github = "https://github.com/LevelGrok/level"
+site = "https://levelbot.live"

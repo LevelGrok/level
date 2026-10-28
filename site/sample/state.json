@@ -1,0 +1,61 @@
+{
+"updated": 1793194739,
+"uptime_s": 172800,
+"tape": {
+"ok": true,
+"per_min": 31,
+"per_hour": 1843,
+"total": 90211,
+"error": ""
+},
+"desk": {
+"reads_total": 412,
+"reads_24h": 57,
+"wall": 3,
+"avg_seconds": 10.8,
+"requests_total": 119,
+"auto": {
+"on": true,
+"mc_usd": 25000,
+"age_min": [
+3,
+180
+],
+"per_hour": 20
+},
+"budget": {
+"daily_usd": 5.0,
+"spent_usd": 3.41,
+"left_usd": 1.59,
+"reads_today": 21
+},
+"queue": 0
+},
+"grok": {
+"ready": true,
+"model": "grok-4-fast",
+"calls": 412,
+"errors": 2,
+"error": "",
+"posts_fetched": 11890,
+"spent_usd": 71.2,
+"x_days": 7
+},
+"rpc": {
+"url": "https://api.mainnet-beta.solana.com",
+"calls": 5120,
+"errors": 4
+},
+"dex": {
+"ok": true,
+"calls": 3300,
+"error": ""
+},
+"links": {
+"token_mint": "",
+"token_symbol": "LEVEL",
+"x": "",
+"github": "https://github.com/levelsol/level",
+"site": "https://levelbot.live"
+}
+}
