@@ -8,7 +8,7 @@
 # Nothing here asks for a key. The Grok key is set afterwards with deploy/key.sh and lives in /etc/level.env, root only.
 set -euo pipefail
 REPO=${REPO:-}
-DOMAIN=${DOMAIN:-api.levelbot.live}
+DOMAIN=${DOMAIN:-api.level-bot.tech}
 ROOT=/opt/level
 U=level
 PORT=8793
@@ -70,9 +70,9 @@ $ROOT/venv/bin/pip install -q -r $ROOT/app/requirements.txt
 say "4/6  config"
 [ -f $ROOT/config.toml ] || cp $ROOT/app/config.example.toml $ROOT/config.toml
 sed -i "s|^data_dir = .*|data_dir = \"$ROOT/data\"|; s|^port = .*|port = $PORT|" $ROOT/config.toml
-# the project links (site, github, x) follow the example on every install; the mint is set on the box
-grep -q '^\[links\]' $ROOT/config.toml || printf '\n[links]\ntoken_mint = ""\ntoken_symbol = "LEVEL"\nx = ""\ngithub = ""\nsite = ""\n' >> $ROOT/config.toml
-for k in github site token_symbol x; do
+# the project links (site, github, x) follow the example on every install
+grep -q "^\[links\]" $ROOT/config.toml || printf "\n[links]\nx = \"\"\ngithub = \"\"\nsite = \"\"\n" >> $ROOT/config.toml
+for k in github site x; do
   v=$(grep "^$k = " $ROOT/app/config.example.toml | head -1 | sed 's/ *#.*//' | cut -d= -f2- | sed 's/^ *//')
   [ -n "$v" ] && sed -i "s|^$k = .*|$k = $v|" $ROOT/config.toml
 done

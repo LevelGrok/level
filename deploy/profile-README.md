@@ -1,25 +1,25 @@
-<a href="https://levelbot.live"><img src="https://levelbot.live/assets/brand/banner.png" width="100%" alt="level. A Grok teammate that reads a pump.fun launch before you do."></a>
+<a href="https://level-bot.tech"><img src="https://level-bot.tech/assets/brand/banner.png" width="100%" alt="GrokLevel. A Grok teammate that reads a pump.fun launch before you do."></a>
 
 <div align="center">
-<a href="https://levelbot.live"><img src="https://img.shields.io/badge/levelbot.live-the%20desk-4FD1FF?style=for-the-badge&labelColor=07080B" alt="the desk"></a>
+<a href="https://level-bot.tech"><img src="https://img.shields.io/badge/level-bot.tech-the%20desk-4FD1FF?style=for-the-badge&labelColor=07080B" alt="the desk"></a>
+<a href="https://x.com/level_grok"><img src="https://img.shields.io/badge/X-%40level__grok-07080B?style=for-the-badge&logo=x&logoColor=4FD1FF&labelColor=07080B" alt="X"></a>
 <a href="https://github.com/LevelGrok/level"><img src="https://img.shields.io/badge/agent-source-07080B?style=for-the-badge&logo=github&logoColor=4FD1FF&labelColor=07080B" alt="source"></a>
-<a href="https://api.levelbot.live/state.json"><img src="https://img.shields.io/badge/desk-live%20json-2EE59D?style=for-the-badge&labelColor=07080B" alt="live json"></a>
+<a href="https://api.level-bot.tech/state.json"><img src="https://img.shields.io/badge/desk-live%20json-2EE59D?style=for-the-badge&labelColor=07080B" alt="live json"></a>
 <img src="https://img.shields.io/github/followers/LevelGrok?style=for-the-badge&logo=github&logoColor=4FD1FF&color=07080B&labelColor=07080B&label=followers" alt="followers">
 <a href="https://github.com/LevelGrok/level/stargazers"><img src="https://img.shields.io/github/stars/LevelGrok/level?style=for-the-badge&logo=github&logoColor=4FD1FF&color=07080B&labelColor=07080B&label=stars" alt="stars"></a>
 </div>
 
 <br>
 
-### 🫧 What level is
+### 🫧 What GrokLevel is
 
 ```toml
-[level]
+[grok_level]
 is = "a Grok teammate that reads a pump.fun launch before you do"
 reads = "the bonding curve, the creator wallet, the top holders, the market, and then X through Grok"
 answers = "counts and quotes in about ten seconds: posts, accounts, account ages, repeated text, the project's own account"
 never = "a price call, a score, a buy button, a signer, a stored address"
 costs = "about $0.10 of Grok per read, shown on every card"
-mint = "posted here and on the project account on launch day"
 ```
 
 ### 🧰 Stack
@@ -53,11 +53,10 @@ mint = "posted here and on the project account on launch day"
 <img src="https://img.shields.io/badge/never-a%20signer-FF4D5E?style=for-the-badge&labelColor=07080B" alt="never a signer">
 <img src="https://img.shields.io/badge/never-your%20address%20or%20ip-FF4D5E?style=for-the-badge&labelColor=07080B" alt="never your data">
 <img src="https://img.shields.io/badge/never-an%20invented%20post-FF4D5E?style=for-the-badge&labelColor=07080B" alt="never an invented post">
-<img src="https://img.shields.io/badge/never-gated%20by%20the%20token-FF4D5E?style=for-the-badge&labelColor=07080B" alt="never gated">
 </div>
 
 <br>
 
-<p align="center"><a href="https://github.com/LevelGrok/level"><img src="https://img.shields.io/badge/github.com%2FLevelGrok%2Flevel-open%20the%20repo-4FD1FF?style=for-the-badge&logo=github&logoColor=07080B&labelColor=07080B" alt="level repo"></a></p>
+<p align="center"><a href="https://github.com/LevelGrok/level"><img src="https://img.shields.io/badge/github.com%2FLevelGrok%2Flevel-open%20the%20repo-4FD1FF?style=for-the-badge&logo=github&logoColor=07080B&labelColor=07080B" alt="GrokLevel repo"></a></p>
 
-<p align="center"><sub>built in public · <a href="https://levelbot.live">levelbot.live</a> · <a href="https://github.com/LevelGrok/level">LevelGrok/level</a></sub></p>
+<p align="center"><sub>built in public · <a href="https://level-bot.tech">level-bot.tech</a> · <a href="https://x.com/level_grok">@level_grok</a> · <a href="https://github.com/LevelGrok/level">LevelGrok/level</a></sub></p>
