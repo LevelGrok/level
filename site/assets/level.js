@@ -1,7 +1,7 @@
 /* level: page logic. Reads the desk's public files, renders the wall, runs a read. No framework, no build. */
 window.LEVEL = (function () {
   const SAMPLE = window.LEVEL_SAMPLE || location.protocol === 'file:' || /^(localhost|127\.0\.0\.1|0\.0\.0\.0)$/.test(location.hostname) || /\.local$/.test(location.hostname);
-  const HOSTS = window.LEVEL_API ? [window.LEVEL_API] : ['https://api.levelbot.live', 'https://level.162-35-122-197.sslip.io'];
+  const HOSTS = window.LEVEL_API ? [window.LEVEL_API] : ['https://api.level-bot.tech', 'https://level.162-35-122-197.sslip.io'];
   let API = SAMPLE ? 'sample' : HOSTS[0].replace(/\/$/, '');
   let DEMO = SAMPLE;
   const $ = (s, el) => (el || document).querySelector(s);
@@ -13,10 +13,7 @@ window.LEVEL = (function () {
   const hhmm = ts => new Date(ts * 1000).toISOString().slice(11, 19);
   const short = a => a ? a.slice(0, 4) + '…' + a.slice(-4) : '';
   const MOTION = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-  const JUP_SRC = 'https://terminal.jup.ag/main-v4.js';
-  const SOL_MINT = 'So11111111111111111111111111111111111111112';
   let LINKS = {};
-  const SYM = () => LINKS.token_symbol || 'LEVEL';
 
   function demoBanner(text) {
     if (document.getElementById('demo-banner')) return;
@@ -237,7 +234,9 @@ ${notable.length ? `<ul class="quotes">${notable.map(n => `<li><a href="${esc(n.
     const ls = (tape.launches || []).slice(0, 40);
     if (!ls.length) { t.innerHTML = '<span>the tape is quiet</span>'; return; }
     const one = ls.map(l => `<span><span class="v watch">new</span><b>$${esc(l.symbol || '?')}</b> ${esc(l.name || '')} · ${l.sol_in} SOL in · ${ago(l.ts)} ago</span>`).join('');
-    t.innerHTML = one + one;
+    t.innerHTML = one;
+    // constant, slow speed whatever the number of launches: about 38 px a second
+    setTimeout(() => { t.style.animationDuration = Math.max(90, Math.round(t.scrollWidth / 38)) + 's'; }, 50);
   }
   function renderStats(st) {
     const tape = st.tape || {}, desk = st.desk || {}, b = desk.budget || {};
@@ -295,91 +294,47 @@ ${notable.length ? `<ul class="quotes">${notable.map(n => `<li><a href="${esc(n.
     if (q) f.requestSubmit();
   }
 
-  // ---------------------------------------------------------------- token
-  function buyLinks(mint) {
-    return `<a class="btn ghost sm" href="https://pump.fun/coin/${esc(mint)}" target="_blank" rel="noopener">pump.fun ↗</a>
-      <a class="btn ghost sm" href="https://dexscreener.com/solana/${esc(mint)}" target="_blank" rel="noopener">dexscreener ↗</a>
-      <a class="btn ghost sm" href="https://solscan.io/token/${esc(mint)}" target="_blank" rel="noopener">solscan ↗</a>`;
-  }
-  function buyModal() {
-    let m = $('#buy-modal'); if (m) return m;
-    const mint = LINKS.token_mint;
-    m = document.createElement('div'); m.id = 'buy-modal'; m.className = 'buy'; m.hidden = true;
-    m.innerHTML = `<div class="buy-bg"></div>
-<div class="buy-card" role="dialog" aria-label="Buy $${esc(SYM())}">
-  <div class="buy-head"><div><p class="eyebrow">the project token</p><h3 class="disp">Buy $${esc(SYM())}</h3></div><button type="button" class="buy-x" aria-label="close">×</button></div>
-  <div class="buy-ca"><code>${esc(mint)}</code><button type="button" class="btn ghost sm copy">copy</button></div>
-  <div class="jup" id="jup-box"><div class="jup-wait">loading the swap…</div></div>
-  <div class="buy-foot">${buyLinks(mint)}<span class="d">swap by Jupiter, in your own wallet. the site never holds anything.</span></div>
-</div>`;
-    document.body.appendChild(m);
-    m.querySelector('.buy-bg').onclick = closeBuy; m.querySelector('.buy-x').onclick = closeBuy;
-    m.querySelector('.copy').onclick = e => copyText(mint, e.currentTarget);
-    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !m.hidden) closeBuy(); });
-    return m;
-  }
-  function closeBuy() { const m = $('#buy-modal'); if (m) { m.hidden = true; document.body.classList.remove('noscroll'); } }
-  async function openBuy() {
-    const mint = LINKS.token_mint; if (!mint) return;
-    const m = buyModal(); m.hidden = false; document.body.classList.add('noscroll');
-    if (openBuy.started) return;
-    openBuy.started = true;
-    try {
-      if (!window.Jupiter) await new Promise((res, rej) => { const sc = document.createElement('script'); sc.src = JUP_SRC; sc.onload = res; sc.onerror = () => rej(new Error('jup')); document.head.appendChild(sc); });
-      const wait = m.querySelector('.jup-wait'); if (wait) wait.remove();
-      window.Jupiter.init({displayMode: 'integrated', integratedTargetId: 'jup-box', formProps: {initialInputMint: SOL_MINT, initialOutputMint: mint, fixedMint: mint}, containerStyles: {borderRadius: '16px', maxHeight: '560px'}});
-    } catch (e) {
-      openBuy.started = false;
-      const j = $('#jup-box'); if (j) j.innerHTML = `<div class="jup-wait">the swap widget did not load. buy on <a href="https://pump.fun/coin/${esc(mint)}" target="_blank" rel="noopener">pump.fun</a> or <a href="https://jup.ag/swap/SOL-${esc(mint)}" target="_blank" rel="noopener">jup.ag</a>.</div>`;
-    }
-  }
-  function buyButton() {
-    if (!LINKS.token_mint) return;
-    $$('.rail .right').forEach(r => {
-      if (r.querySelector('#buybtn')) return;
-      const b = document.createElement('button'); b.type = 'button'; b.id = 'buybtn'; b.className = 'btn'; b.textContent = `Buy $${SYM()}`; b.onclick = openBuy;
-      const anchor = r.querySelector('.btn.fill'); r.insertBefore(b, anchor || null);
-    });
-  }
-  async function tokenStats(mint) {
-    const el = $('#mintstats'); if (!el || API === 'sample') return;
-    try {
-      const r = await fetch(`https://api.dexscreener.com/tokens/v1/solana/${mint}`); if (!r.ok) throw new Error('dex');
-      const ps = await r.json(); if (!ps.length) { el.textContent = 'on pump.fun · no pair indexed yet'; return; }
-      const p = ps.reduce((a, b) => ((b.liquidity && b.liquidity.usd) || 0) > ((a.liquidity && a.liquidity.usd) || 0) ? b : a);
-      const mc = p.marketCap || p.fdv, vol = p.volume && p.volume.h24, ch = p.priceChange && p.priceChange.h24;
-      el.innerHTML = `market cap <b>${mc ? '$' + fmt(mc) : '–'}</b> · 24h volume <b>${vol ? '$' + fmt(vol) : '–'}</b>${ch != null ? ` · 24h <b class="${ch >= 0 ? 'g' : 'r'}">${ch >= 0 ? '+' : ''}${(+ch).toFixed(1)}%</b>` : ''} · <span class="d">dexscreener</span>`;
-    } catch (e) { el.textContent = 'on pump.fun'; }
-  }
-  function renderLinks(links) {
+  function renderLinks(links, st) {
     LINKS = links || {};
     const x = LINKS.x; $$('a.xlink, a.xlink2').forEach(a => { if (x) { a.href = x; a.hidden = false; } else a.hidden = true; });
     const gh = LINKS.github; if (gh) $$('a.ghlink').forEach(a => { a.href = a.textContent.includes('desk.py') ? gh.replace(/\/$/, '') + '/blob/main/agent/desk.py' : gh; });
-    $$('.sym').forEach(s => { s.textContent = SYM(); });
-    const mint = LINKS.token_mint;
-    buyButton();
-    const el = $('#mint');
-    if (el) el.innerHTML = mint
-      ? `<div class="mintrow"><span class="eyebrow" style="margin:0">mint</span><code id="ca">${esc(mint)}</code><button type="button" class="btn ghost sm copy">copy</button></div>
-<div class="mintbtns"><button type="button" class="btn fill" id="buybtn-2">Buy $${esc(SYM())} →</button>${buyLinks(mint)}<a class="btn ghost sm" href="?m=${esc(mint)}#desk">read it on the desk</a></div>
-<div class="mintstats d" id="mintstats">on pump.fun · reading the market…</div>`
-      : `<div class="mintrow"><span class="eyebrow" style="margin:0">mint</span><code>posted on the project account on launch day</code>${x ? `<a class="btn ghost sm" href="${esc(x)}" target="_blank" rel="noopener">follow for the drop</a>` : ''}</div>`;
-    if (el && mint) { el.querySelector('.copy').onclick = e => copyText(mint, e.currentTarget); $('#buybtn-2').onclick = openBuy; tokenStats(mint); }
+    const bl = $('#bill-line');
+    if (bl) {
+      const b = (st && st.desk && st.desk.budget) || {};
+      bl.textContent = st && st.grok && st.grok.ready && b.daily_usd
+        ? `$${(b.spent_usd || 0).toFixed(2)} of the $${b.daily_usd} daily Grok budget is spent. About $0.10 a read.`
+        : 'the Grok key is not set on this desk yet, so cards show chain facts only.';
+    }
     const an = $('.api-note'); if (an) an.textContent = API === 'sample' ? 'sample data' : `agent: ${API}`;
+  }
+
+  // ---------------------------------------------------------------- ca
+  // the contract address lives in ca.json next to the page, so it can be set without touching the code
+  async function caInit() {
+    let ca = '';
+    try { const r = await fetch('ca.json?' + Date.now(), {cache: 'no-store'}); if (r.ok) ca = ((await r.json()).ca || '').trim(); } catch (e) {}
+    if (!/^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(ca)) return;
+    const bar = $('#ca-bar'); if (!bar) return;
+    $('#ca-code').textContent = ca;
+    $('#ca-copy').onclick = e => copyText(ca, e.currentTarget);
+    $('#ca-pump').href = 'https://pump.fun/coin/' + ca;
+    $('#ca-dex').href = 'https://dexscreener.com/solana/' + ca;
+    $('#ca-read').href = '?m=' + ca + '#desk';
+    bar.hidden = false; const n = $('#nav-ca'); if (n) n.hidden = false;
   }
 
   // ---------------------------------------------------------------- page
   async function init() {
     if (window.LEVEL_SAMPLE) demoBanner('Preview with sample reads. The live desk fills the wall once it is deployed.');
-    clock(); navSpy(); filters(); readForm(); reveal(); tilt(); spotlight();
+    caInit(); clock(); navSpy(); filters(); readForm(); reveal(); tilt(); spotlight();
     const load = async () => {
       try {
         const [st, reads, tape, events] = await Promise.all([get('state.json'), get('reads.json'), get('tape.json'), get('events.json')]);
-        agentChip(st); renderStats(st); renderLinks(st.links); renderTicker(tape); renderTerm(st, events); renderWall(reads); fieldFeed(tape, reads); fieldStart();
+        agentChip(st); renderStats(st); renderLinks(st.links, st); renderTicker(tape); renderTerm(st, events); renderWall(reads); fieldFeed(tape, reads); fieldStart();
       } catch (e) { console.warn(e); agentChip(null); }
     };
     await load();
     setInterval(load, 15000);
   }
-  return {get API() { return API; }, get DEMO() { return DEMO; }, get, post, esc, fmt, init, card, openBuy, toast, copyText, get LINKS() { return LINKS; }, setMint(m) { renderLinks({...LINKS, token_mint: m}); }};
+  return {get API() { return API; }, get DEMO() { return DEMO; }, get, post, esc, fmt, init, card, toast, copyText, get LINKS() { return LINKS; }};
 })();
