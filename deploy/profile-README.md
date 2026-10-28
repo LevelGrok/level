@@ -20,6 +20,7 @@ reads = "the bonding curve, the creator wallet, the top holders, the market, and
 answers = "counts and quotes in about ten seconds: posts, accounts, account ages, repeated text, the project's own account"
 never = "a price call, a score, a buy button, a signer, a stored address"
 costs = "about $0.10 of Grok per read, shown on every card"
+ca = "3fK54p5SzHiPKB9JqPw893i1FNU5Xahf1QQbt4iPpump"
 ```
 
 ### 🧰 Stack
