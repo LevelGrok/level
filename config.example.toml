@@ -21,8 +21,6 @@ read_per_min = 4               # POST /read per IP per minute
 
 [links]
 # everything the site shows about the project comes from here: one edit + restart changes it everywhere
-token_mint = ""                # the token's contract address, once it exists; empty hides the buy button
-token_symbol = "LEVEL"
-x = ""                         # the project account on X
+x = "https://x.com/level_grok"       # the project account on X
 github = "https://github.com/LevelGrok/level"
-site = "https://levelbot.live"
+site = "https://level-bot.tech"

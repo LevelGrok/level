@@ -1,4 +1,4 @@
-# level
+# GrokLevel
 
 A Grok teammate that **reads a pump.fun launch before you do.**
 
